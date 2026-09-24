@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { connectDatabase } from './config/database.js';
 import apiRouter from './routes/api.js';
 const app = express();
@@ -7,6 +8,7 @@ const apiBaseUrl = process.env.CODESPACE_NAME
     ? `https://${process.env.CODESPACE_NAME}-8000.app.github.dev`
     : 'http://localhost:8000';
 app.use(express.json());
+app.use(cors());
 app.get('/api/health', (_request, response) => {
     response.json({ status: 'ok', database: 'octofit_db' });
 });
