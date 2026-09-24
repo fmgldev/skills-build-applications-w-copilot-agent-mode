@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
+const _workoutsEndpoint = 'https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/'
+
 function Workouts() {
   const [workouts, setWorkouts] = useState([])
   const [error, setError] = useState('')

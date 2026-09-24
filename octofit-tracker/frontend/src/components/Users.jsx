@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
+const _usersEndpoint = 'https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/'
+
 function Users() {
   const [users, setUsers] = useState([])
   const [error, setError] = useState('')
